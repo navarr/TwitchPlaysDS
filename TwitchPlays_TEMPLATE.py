@@ -9,7 +9,7 @@ from TwitchPlays_KeyCodes import *
 ##################### GAME VARIABLES #####################
 
 # Replace this with your Twitch username. Must be all lowercase.
-TWITCH_CHANNEL = 'dougdougw' 
+TWITCH_CHANNEL = 'queenrowlet' 
 
 # If streaming on Youtube, set this to False
 STREAMING_ON_TWITCH = True
@@ -77,47 +77,47 @@ def handle_message(message):
         ###################################
         # Example GTA V Code 
         ###################################
-
+        
         # If the chat message is "left", then hold down the A key for 2 seconds
         if msg == "left": 
-            HoldAndReleaseKey(A, 2)
+            HoldAndReleaseKey(LEFT_ARROW, 2)
 
         # If the chat message is "right", then hold down the D key for 2 seconds
         if msg == "right": 
-            HoldAndReleaseKey(D, 2)
+            HoldAndReleaseKey(RIGHT_ARROW, 2)
 
-        # If message is "drive", then permanently hold down the W key
-        if msg == "drive": 
-            ReleaseKey(S) #release brake key first
-            HoldKey(W) #start permanently driving
+        if msg == "up":
+            HoldAndReleaseKey(UP_ARROW, 2)
 
-        # If message is "reverse", then permanently hold down the S key
-        if msg == "reverse": 
-            ReleaseKey(W) #release drive key first
-            HoldKey(S) #start permanently reversing
+        if msg == "down":
+            HoldAndReleaseKey(DOWN_ARROW, 2)
 
-        # Release both the "drive" and "reverse" keys
-        if msg == "stop": 
-            ReleaseKey(W)
-            ReleaseKey(S)
+        if msg == "b":
+            HoldAndReleaseKey(Z, 2)
 
-        # Press the spacebar for 0.7 seconds
-        if msg == "brake": 
-            HoldAndReleaseKey(SPACE, 0.7)
+        if msg == "a":
+            HoldAndReleaseKey(X, 2)
 
-        # Press the left mouse button down for 1 second, then release it
-        if msg == "shoot": 
-            pydirectinput.mouseDown(button="left")
-            time.sleep(1)
-            pydirectinput.mouseUp(button="left")
+        if msg == "y":
+            HoldAndReleaseKey(A, 2)
 
-        # Move the mouse up by 30 pixels
-        if msg == "aim up":
-            pydirectinput.moveRel(0, -30, relative=True)
+        if msg == "x":
+            HoldAndReleaseKey(S, 2)
 
-        # Move the mouse right by 200 pixels
-        if msg == "aim right":
-            pydirectinput.moveRel(200, 0, relative=True)
+        if msg == "start":
+            HoldAndReleaseKey(E, 2)
+        
+        if msg == "select":
+            HoldAndReleaseKey(R, 2)
+
+        if msg == "sel":
+            HoldAndReleaseKey(R, 2)
+
+        if msg == "l":
+            HoldAndReleaseKey(Q, 2)
+
+        if msg == "r":
+            HoldAndReleaseKey(W, 2)
 
         ####################################
         ####################################
