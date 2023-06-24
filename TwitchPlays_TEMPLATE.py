@@ -9,7 +9,7 @@ from TwitchPlays_KeyCodes import *
 ##################### GAME VARIABLES #####################
 
 # Replace this with your Twitch username. Must be all lowercase.
-TWITCH_CHANNEL = 'queenrowlet' 
+TWITCH_CHANNEL = 'navarrb' 
 
 # If streaming on Youtube, set this to False
 STREAMING_ON_TWITCH = True
@@ -59,6 +59,9 @@ else:
     t = TwitchPlays_Connection.YouTube()
     t.youtube_connect(YOUTUBE_CHANNEL_ID, YOUTUBE_STREAM_URL)
 
+holdLeft = False
+holdRight = False
+
 def handle_message(message):
     try:
         msg = message['message'].lower()
@@ -77,47 +80,16 @@ def handle_message(message):
         ###################################
         # Example GTA V Code 
         ###################################
-        
-        # If the chat message is "left", then hold down the A key for 2 seconds
-        if msg == "left": 
-            HoldAndReleaseKey(LEFT_ARROW, 2)
 
-        # If the chat message is "right", then hold down the D key for 2 seconds
-        if msg == "right": 
-            HoldAndReleaseKey(RIGHT_ARROW, 2)
-
-        if msg == "up":
-            HoldAndReleaseKey(UP_ARROW, 2)
-
-        if msg == "down":
-            HoldAndReleaseKey(DOWN_ARROW, 2)
-
-        if msg == "b":
-            HoldAndReleaseKey(Z, 2)
-
-        if msg == "a":
-            HoldAndReleaseKey(X, 2)
-
-        if msg == "y":
-            HoldAndReleaseKey(A, 2)
-
-        if msg == "x":
-            HoldAndReleaseKey(S, 2)
-
-        if msg == "start":
-            HoldAndReleaseKey(E, 2)
-        
-        if msg == "select":
-            HoldAndReleaseKey(R, 2)
-
-        if msg == "sel":
-            HoldAndReleaseKey(R, 2)
-
-        if msg == "l":
-            HoldAndReleaseKey(Q, 2)
-
-        if msg == "r":
-            HoldAndReleaseKey(W, 2)
+        match msg:
+            case "left":
+                // TODO logic
+            case "right":
+                // TODO logic
+            case "launch":
+                // TODO logic
+            case _:
+                // Do nothing intentionally
 
         ####################################
         ####################################
