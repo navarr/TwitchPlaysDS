@@ -78,16 +78,50 @@ def handle_message(message):
         # I've added some example videogame logic code below:
 
         ###################################
-        # Example GTA V Code 
+        # Pokemon Pinball Code
         ###################################
 
         match msg:
+            case "lflip" | "left flipper" | "left-flipper" | "l-flipper" | "flipperl" | "hold left" | "holdleft" | "release left" | "releaseleft":
+                if (holdLeft):
+                    holdLeft = False;
+                    ReleaseKey(A);
+                else:
+                    holdLeft = true;
+                    HoldKey(A);
+            case "rflip" | "right flipper" | "right-flipper" | "r-flipper" | "flipperr" | "hold right" | "holdright" | "hold a" | "holda" | "release a" | "releasea" | "release right" | "releaseright":
+                if (holdRight):
+                    holdRight = False;
+                    ReleaseKey(L);
+                else:
+                    holdRight = True;
+                    HoldKey(L);
+            case "up":
+                holdAndRelease(W, 0.1);
+            case "down":
+                holdAndRelease(S, 0.1);
             case "left":
-                // TODO logic
+                if (holdLeft):
+                    holdLeft = False;
+                    ReleaseKey(A);
+                holdAndRelease(A, 0.1);
             case "right":
-                // TODO logic
-            case "launch":
-                // TODO logic
+                holdAndRelease(D, 0.1);
+            case "select":
+                holdAndRelease(BACKSPACE, 0.1);
+            case "a":
+                if (holdRight):
+                    holdRight = False;
+                    ReleaseKey(L);
+                holdAndRelease(L, 0.1);
+            case "b":
+                holdAndRelease(K, 0.1);
+            case "l":
+                holdAndRelease(I, 0.1);
+            case "r":
+                holdAndRelease(O, 0.1);
+            case "start":
+                holdAndRelease(ENTER, 0.1);
             case _:
                 // Do nothing intentionally
 
